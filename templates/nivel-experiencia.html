@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas por Nível de Experiência</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        <section class="intro">
+            <h2>Níveis de Experiência: O Que as Empresas Buscam?</h2>
+            
+            <div class="context">
+                <p>À medida que os profissionais ganham experiência, as exigências das empresas também se ajustam. Ao analisar os dados sobre os níveis de experiência exigidos pelas vagas, foi possível observar que:</p>
+	            <p>Profissionais de nível Mid-Senior são os mais procurados, com 32,9% das vagas a exigir experiência intermédia ou avançada.</p>
+                <p>Vagas para Entry Level representam 30,8%, o que mostra uma boa quantidade de oportunidades para quem está a iniciar a carreira, embora a concorrência seja elevada.</p>
+
+                <p>Este padrão mostra o equilíbrio entre a experiência necessária e o potencial dos profissionais. As empresas procuram perfis que tragam expertise de forma rápida, mas também reconhecem a importância de investir no futuro, contratando iniciantes.</p>
+
+   
+            </div>
+            
+            <div class="graph-container">
+                <img src="{{ url_for('static', filename='graphs/grafico3_nivel_experiencia.png') }}" alt="Gráfico de Vagas por Formato de Trabalho" class="graph">
+            </div>
+        </section>
+        <section class="buttons">
+            <button onclick="location.href='/localizacao'"> <<< Localização</button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            <button onclick="location.href='/top-10-titulos'">Títulos de Vagas >>> </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

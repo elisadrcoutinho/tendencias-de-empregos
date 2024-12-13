@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas por Localização</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plotly.com/plotly-latest.min.js"></script> <!-- Importar Plotly -->
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                   
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        <section class="intro">
+            <h2>A Localização das Vagas: Onde estão as oportunidades?</h2>
+            <div class="context">
+                <p>Onde as maiores oportunidades estão realmente escondidas? A análise da localização das vagas revela que:</p>
+                <p>A Califórnia lidera com mais de 10.000 vagas, seguida por estados-chave como o Texas e Nova Iorque, que abrigam grandes centros económicos e tecnológicos.</p>
+                <p>Estados com menos vagas, como Vermont e Dakota do Sul, indicam que as oportunidades ainda estão concentradas nas grandes regiões metropolitanas.</p>
+            
+                <p>Este padrão mostra que, embora as oportunidades se concentrem em algumas regiões, existe uma barreira geográfica para aqueles que buscam mudar-se para zonas com menos vagas disponíveis. O mercado de trabalho continua a ser muito centralizado.</p>
+            
+            </div>
+            
+            <div class="graph-container">
+                <!-- Gráfico gerado dinamicamente -->
+                {{ graph_html|safe }}
+            </div>
+            
+    
+        </section>
+
+        <section class="buttons">
+            <button onclick="location.href='/tipo-contrato'"> <<< Tipo de Trabalho</button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            <button onclick="location.href='/nivel-experiencia'"> Nível de experiência >>></button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

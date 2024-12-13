@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Títulos de Vagas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                   
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        <section class="intro">
+            <h2>Títulos de Vagas: O Que as Empresas Realmente Procuram?</h2>
+            
+            <div class="context">
+                <p>Quando se analisa os títulos de vagas mais frequentes, observam-se algumas funções que se destacam mais do que outras:</p>
+                <p>Sales Manager, Customer Service Representative e Project Manager estão entre as posições mais comuns, mas com grande variação no número de vagas e na quantidade de candidaturas.</p>
+                <p><Funções como Project Manager geram uma quantidade considerável de candidaturas, indicando que essas vagas atraem um público altamente competitivo.</p>
+
+                <p>Este padrão revela que existem setores com muitas oportunidades, mas também mostra que alguns cargos estão mais saturados, enquanto outros, apesar de menos disponíveis, geram menos concorrência.</p>
+
+   
+            </div>
+            
+            <div class="graph-container">
+                <img src="{{ url_for('static', filename='graphs/grafico5_top10_titulos_ofertados.png') }}" alt="Gráfico de Vagas por Formato de Trabalho" class="graph">
+            </div>
+        </section>
+        <section class="buttons">
+            <button onclick="location.href='/nivel-experiencia'"><<< Nível de Experiencia</button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            <button onclick="location.href='/top-10-vagas'">Vagas Mais Procuradas >>></button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

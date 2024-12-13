@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os dados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        <section class="intro">
+            <h2>1. Fonte e Tamanho do Dataset</h2>
+            <div class="context">
+                <p>A fonte dos dados utilizados um conjunto de dados extraído diretamente do LinkedIn, disponibilizado no Kaggle.
+                    O dataset contém informações sobre ofertas de emprego publicadas no LinkedIn durante o mês de abril de 2024 
+                    nos Estados Unidos.</p>
+                <p>O dataset original é um ficheiro formato .csv que possui 123.849 registros e 31 colunas.</p>
+	         </div>
+             <div class="graph-container">
+                <img src="{{ url_for('static', filename='images/jupyter1.jpg') }}" alt="Print screen Jupyter" class="graph">
+            </div>
+
+            <h2>1. Frameworks utilizados</h2>
+            <div class="context">
+                <p>Foram utilizados diversos frameworks e bibliotecas para realizar esta análise de dados, cada um com funções 
+                    específicas e complementares:</p>
+                    <br>
+                <p><strong>Pandas</strong> foi usado para manipular e analisar os dados tabulares. Com a sua estrutura principal, o DataFrame, 
+                    foi possível organizar, filtrar e transformar os dados de forma eficiente, simplificando todo o processo de análise.</p>
+                <p><strong>NumPy</strong> foi essencial para operações matemáticas e manipulação de arrays, garantindo a rapidez e precisão nos 
+                    cálculos, especialmente em grandes conjuntos de dados numéricos.</p>
+                <p><strong>Matplotlib</strong> foi utilizado para criar gráficos personalizados e detalhados. Esta biblioteca permitiu 
+                    construir visualizações de dados que facilitam a interpretação dos resultados, desde gráficos simples até 
+                    representações mais complexas.</p>
+                <p><strong>Seaborn</strong> foi utilizado para criar gráficos estatísticos e visualizações de dados. 
+                    Com a sua biblioteca de visualização de dados, foi possível criar gráficos estatísticos e visualizações
+                    de dados que facilitam a interpretação dos resultados, desde gráficos simples como de pizaa
+                    até representações mais complexas como o mapa interativo.</p>
+                <p><strong>OS</strong> foi utilizado para interagir com o sistema operativo, permitindo manipular diretórios e ficheiros 
+                    de forma eficiente, o que garantiu uma organização consistente durante o desenvolvimento do projeto.</p>   
+	         </div>
+             <div class="graph-container">
+                <img src="{{ url_for('static', filename='images/jupyter14.jpg') }}" alt="Print screen Jupyter" class="graph">
+            </div>
+
+            <h2>3. Limpeza dos Dados</h2>
+            <div class="context">
+                <p>Antes de iniciar a análise exploratória, foi necessário realizar o processo de limpeza dos dados para garantir 
+                    que eles estivessem prontos para análise. O processo de limpeza incluiu as seguintes etapas:</p>
+                    <br>
+                <p><strong>Remoção de Colunas Irrelevantes:</strong> Diversas colunas foram removidas do dataset, pois não eram necessárias para 
+                    a análise, como job_id, company_name, company_id, original_listed_time, pay_period, job_posting_url, entre 
+                    outras. Essas colunas não agregavam valor à análise proposta.</p>
+
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter2.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                <p><strong>Tratamento de Valores Ausentes:</strong> Algumas colunas do dataset continham valores ausentes. Para lidar com isso:</p>
+                    <p>A coluna views foi preenchida com o valor 0.</p>
+                    <p>• A coluna applies foi preenchida com o valor 0.</p>
+                    <p>• As colunas formatted_experience_level e skills_desc foram preenchidas com “Não especificado” e “Habilidades não especificadas”, respectivamente.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter3.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                <p><strong>Remoção de Duplicatas:</strong> Foi realizada a remoção de duplicatas com base nas colunas title, description e location. 
+                    As vagas duplicadas foram eliminadas para garantir que cada vaga fosse única.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter4.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+               
+             
+
+            <h2>4. Processamento dos Dados</h2>
+            <div class="context">
+                <p>Com os dados já limpos, as etapas de processamento envolvem a análise dos dados de forma a extrair informações 
+                 relevantes para a análise. O processo de processamento incluiu:</p>
+                 <br>
+                 <p><strong>4.1 Contagem de Vagas por Mês</strong></p>
+                    <p>A primeira análise realizada foi para verificar a distribuição das vagas ao longo do mês de abril de 2024. 
+                    A coluna listed_time foi utilizada para extrair a data de publicação de cada vaga e a quantidade de vagas por 
+                    mês foi calculada. O resultado mostrou que todas as vagas eram de abril de 2024.</p>
+                    
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter5.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                    <p><strong>4.2 Análise de Trabalho Remoto</strong></p>
+
+                    <p>A coluna remote_allowed foi utilizada para analisar a permissão de trabalho remoto. As vagas foram agrupadas 
+                    conforme as categorias “Permitido” e “Não Permitido” para entender a proporção de vagas que permitem trabalho remoto..</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter7.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                
+                    <p><strong>4.3 Relação entre Vistas e Aplicações</strong></p>
+
+                    <p>Foi calculada a correlação de Pearson entre as colunas views e applies para verificar a relação entre o 
+                    número de visualizações e o número de candidaturas. A análise foi realizada separando as vagas em duas 
+                    categorias: “Remoto Permitido” e “Não Remoto Permitido”.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter10.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+
+                    <p><strong>4.4 Contagem de Vagas por Tipo de Trabalho</strong></p>
+
+                    <p>A análise das vagas por tipo de trabalho foi realizada utilizando a coluna formatted_work_type. A distribuição 
+                    das vagas foi calculada entre os tipos full-time, contract, part-time, entre outros.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter6.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                    <p><strong>4.4 Contagem de Vagas por Localização</strong></p>
+
+                    <p>As vagas foram segmentadas por localização com base na coluna location. Foi calculado o número total de vagas por 
+                    estado, permitindo identificar as regiões com mais ofertas de emprego.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter8.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                    <p><strong>4.5 Análise de Nível de Experiência</strong></p>
+
+                    <p>Foi realizada uma análise do nível de experiência exigido para as vagas, utilizando a coluna formatted_experience_level. 
+                    As vagas foram agrupadas conforme o nível de experiência exigido.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter9.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+
+                    <p><strong>4.6 Análise de Títulos de Vagas mais Ofertados</strong></p>
+
+                    <p>Foi calculado o número de candidaturas para cada título de vaga listada entre os 10 títulos mais ofertados
+                        permitindo observar os títulos com maior presença na plataforma.</p>
+                    <p>Essa comparação possibilita entender se as vagas mais anunciadas também atraem um maior volume de candidatos.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter12.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                    <p><strong>4.7 Análise das Vagas mais Aplicações</strong></p>
+
+                    <p>Para esta análise foi realizada a soma total de candidaturas foi calculada para os 10 cargos com mais 
+                        interesse por parte dos candidatos e calculado o número de ofertas para cada título de vaga presente na 
+                        lista das mais candidatas. Por fim, foi avaliado o percentual de aplicações em relação ao número total de 
+                        ofertas para verificar a atratividade dessas vagas no mercado.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter13.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+                    
+                    <p><strong>4.8 Habilidades Mais Frequentes</strong></p>
+
+                    <p>As habilidades exigidas nas ofertas de emprego foram extraídas da coluna skills_desc. As habilidades foram 
+                    divididas em listas, e as 15 habilidades mais frequentes foram identificadas e listadas para observar as 
+                    competências mais exigidas nas ofertas de emprego.</p>
+                    <div class="graph-container">
+                        <img src="{{ url_for('static', filename='images/jupyter11.jpg') }}" alt="Print screen Jupyter" class="graph">
+                    </div>
+                    <br>
+
+                <h2>5. Visualizações</h2>
+                <div class="context">
+                    <p>Diversas visualizações foram criadas para ilustrar os resultados das análises realizadas. Dentre as 
+                        visualizações estao:</p>
+                    <br>
+                    <p>	•	Gráfico de barras para a distribuição das vagas por tipo de trabalho.</p>
+                    <p>	•	Mapa interativo com a quantidade de vagas por localização</p>
+                    <p>	•	Gráfico de pizza para permissão de trabalho remoto.</p>
+                    <p>	•	Gráfico de dispersão mostrando a relação entre vistas e aplicações.</p>
+                    <p>	•	Nuvem de palavras com as 15 habilidades mais frequentes..</p>
+                </div>
+                <div class="graph-container">
+                    <img src="{{ url_for('static', filename='images/jupyter15.jpg') }}" alt="Gráfico de Vagas por Formato de Trabalho" class="graph">
+                </div>
+
+        </section>
+        <section class="buttons">
+            <button class="btn-download" onclick="location.href='/download'">Descarregar dataset</button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            <button onclick="location.href='/formato-trabalho'">Conhecer a história >>> </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+
+
+                
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

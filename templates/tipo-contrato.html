@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Contrato</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        <section class="intro">
+            <h2>Estabilidade ou Flexibilidade?</h2>
+            <div class="context">
+            <p>O tipo de contrato é muito mais do que uma formalidade administrativa; ele influencia diretamente o estilo de vida, a segurança financeira e a qualidade de vida do trabalhador. Ao analisar os dados, surge um cenário claro:</p>
+	        <p>As vagas Full-time dominam o mercado, representando mais de 50% das oportunidades, o que indica a preferência das empresas por vínculos de longo prazo.</p>
+            <p>Contratos temporários e estágios são uma minoria, o que pode representar um obstáculo para aqueles que estão a iniciar a carreira ou que procuram transições rápidas.</p>
+
+            <p>Este padrão revela que as empresas valorizam a estabilidade e o compromisso a longo prazo, mas ao mesmo tempo, levanta a questão sobre a necessidade de abrir mais oportunidades para quem está a começar ou para quem procura experiências temporárias. O mercado está a criar um cenário que pode limitar a entrada de novos talentos?</p>
+
+            </div>
+            
+            <div class="graph-container">
+                <img src="{{ url_for('static', filename='graphs/grafico1_tipo_contrato.png') }}" alt="Gráfico de Vagas por Tipo de Contrato" class="graph">
+            </div>
+            
+            
+        </section>
+
+        <section class="buttons">
+            <button onclick="location.href='/formato-trabalho'"> <<< Formato de Trabalho </button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            <button onclick="location.href='/localizacao'">Localização >>> </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

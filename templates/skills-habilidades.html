@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competências</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        <section class="intro">
+            <h2>Competências: O Que as Empresas Valorizam de Verdade?</h2>
+            
+            <div class="context">
+                <p>Finalmente, uma das partes mais reveladoras da análise: as competências que as empresas mais valorizam. Através da análise das skills mais requisitadas, foi possível observar que:</p>
+                <p>Comunicação, networking e responsabilidade social são cada vez mais habilidades procuradas pelas empresas.</p>
+                <p>As empresas estão a procurar profissionais com competências que vão além das técnicas, valorizando a capacidade de se adaptar e de se conectar com diferentes públicos.</p>
+
+                <p>Este dado sublinha que, além das competências técnicas, o mercado de trabalho está a exigir profissionais com uma visão mais ampla, capazes de se adaptar e de se comunicar de forma eficaz.</p>
+            </div>
+            
+            <div class="graph-container">
+                <img src="{{ url_for('static', filename='graphs/nuvem_palavras_habilidades.png') }}" alt="Gráfico de Vagas por Formato de Trabalho" class="graph">
+            </div>
+        </section>
+        <section class="buttons">
+            <button onclick="location.href='/top-10-vagas'"> <<< Vagas Mais procuradas</button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

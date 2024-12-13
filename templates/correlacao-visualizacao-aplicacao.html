@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizações vs Aplicações</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+
+    <main>
+        
+        <section class="intro">
+            <h2>O Que Acontece Quando as Vagas São Visualizadas? </h2>
+            
+            <div class="context">
+                <h3><p>Será que o número de visualizações de uma vaga reflete realmente o interesse dos candidatos? A análise da relação entre visualizações e candidaturas revela um padrão curioso:</p>
+	            <p>As vagas com trabalho remoto têm uma correlação de 0.77, indicando que o interesse aumenta consideravelmente quando o trabalho remoto é uma opção.</p>
+	            <p>As vagas sem trabalho remoto têm uma correlação de 0.38, sugerindo que o trabalho remoto se tornou um fator crucial para os candidatos.</p>
+
+                <p>Este dado sublinha que o trabalho remoto não é apenas uma vantagem competitiva para as empresas, mas uma necessidade, se elas pretendem atrair os melhores talentos.</p></h3>
+
+   
+            </div>
+            
+            <div class="graph-container">
+                <img src="{{ url_for('static', filename='graphs/grafico4_correlacao_views_applies.png') }}" alt="Gráfico de Correlação View vs Aplies por Formato de Trabalho" class="graph">
+            </div>
+        <section class="buttons">
+            <button onclick="location.href='/formato-trabalho'"> <<< Formato de Trabalho</button>
+            <button class="btn-back-home" onclick="location.href='/'">Voltar ao Início</button>
+            <button onclick="location.href='/tipo-contrato'">Tipo de Contrato >>> </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+</body>
+</html>

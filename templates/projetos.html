@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                    
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-divider"></div>
+
+    <main>
+        <!-- Seção de Introdução -->
+        <section class="intro">
+            <h2>Empregos 360: O que os Dados Revelam - LinkedIn, 2024</h2>
+            <h3>
+                <p>O mercado de trabalho encontra-se em constante transformação, impulsionado por avanços tecnológicos, novas
+                    exigências e dinâmicas sociais. Este projeto foi concebido para investigar estas mudanças, utilizando uma 
+                    abordagem analítica com recurso ao Jupyter Notebook e à linguagem Python. Para isso, foram aplicados 
+                    frameworks robustos como pandas, seaborn e matplotlib, que possibilitaram a transformação de uma base de dados 
+                    extensa, publicada no Kaggle, em insights detalhados e visualizações informativas.</p>
+
+                <p>A análise centrou-se em aspectos como o impacto do trabalho remoto na redefinição da flexibilidade 
+                    organizacional e na forma como as empresas conciliam inovação e tradição. Foram também identificadas 
+                    tendências significativas, como a crescente importância das competências interpessoais, que estão a ganhar 
+                    destaque ao lado das competências técnicas, e o papel determinante das opções de trabalho remoto na 
+                    atratividade das ofertas de emprego.</p>
+
+                <p>Mais do que apresentar dados quantitativos, este projeto procura fornecer uma visão abrangente das 
+                    transformações no mercado de trabalho. As tendências identificadas evidenciam a forma como o futuro do 
+                    trabalho está a ser moldado, oferecendo pistas sobre os desafios e oportunidades que surgem neste novo cenário.</p>
+                    
+                <p>Este projeto não é apenas uma análise de dados; é uma janela para compreender como o futuro do trabalho está a 
+                    ser moldado e como podemos ser parte desta evolução. É uma oportunidade para refletir sobre como as
+                    mudanças no mercado de trabalho podem impactar não apenas o nosso futuro profissional, mas também a nossa
+                    forma de vida e a nossa relação com o trabalho.</p>
+                </h3>
+            <br>
+            
+                <button onclick="location.href='/emprego360'">Explorar análise</button>
+                <br>
+                
+            </div>
+        </section>
+    </main>
+
+ 
+
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a> |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

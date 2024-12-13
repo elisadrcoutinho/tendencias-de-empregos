@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baixar Dados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Baixar Dados</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Baixar o Conjunto de Dados Original</h2>
+            <p>Faça o download do arquivo CSV original utilizado para esta análise de dados.</p>
+            <button onclick="location.href='/download'" class="download">Baixar Dados</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site desenvolvido por Elisa Coutinho</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body id="index"> <!-- Adicionando o ID 'index' ao body para aplicar o estilo apenas na página index -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-divider"></div>
+
+    <main>
+        <br>
+        <!-- Seção de Introdução -->
+        <section class="intro">
+            <div class="intro-container">
+                <div class="foto-container">
+                    <img src="{{ url_for('static', filename='images/minha_foto.jpeg') }}" alt="Gráfico pizza" class="foto">
+                </div>
+                <div class="texto-container">
+                    <h2><p>Olá, Sou Elisa Coutinho</p></h2>
+                    <p>Uma profissional com experiência em gestão de projetos e análise de negócios, 
+                        atualmente em transição para a área de Data Analytics. Ao longo da minha carreira, desenvolvi competências 
+                        em gestão estratégica e processos operacionais, e recentemente finalizei a minha formação em programação 
+                        informática.</p>
+                    <p>Especializei-me em SQL, modelagem de dados e análise de dados, obtendo a certificação Google Data Analytics.
+                        Acredito no poder dos dados para transformar negócios e estou pronta para aplicar meus conhecimentos em 
+                        Python, R e visualização de dados em novos projetos desafiantes.</p>
+                
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <div class="header-divider"></div>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

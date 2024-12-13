@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body id="index"> <!-- Adicionando o ID 'index' ao body para aplicar o estilo apenas na página index -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#top-section"> <!-- Alterado para scroll -->
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#section1">Projetos</a></li>
+                    <li><a href="#section2">Sobre Mim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header-divider"></div>
+
+    <main>
+        <br>
+        <!-- Seção de Introdução -->
+        <section id="top-section" class="intro">
+            <div class="intro-container">
+            
+                <div class="texto-container">
+                    <h2><p>A Jornada dos Dados: Acompanhe meu Portfólio</p></h2>
+                    <p>Este site foi criado para partilhar os meus projetos de análise de dados, visualizações e os conhecimentos 
+                        adquiridos ao longo da minha trajetória nesta área. Aqui, encontrará análises práticas, insights e soluções fundamentadas em dados, que ilustram o impacto da análise de dados na tomada de decisões. Através deste portfólio, é possível explorar o potencial dos dados e acompanhar a minha evolução, enquanto continuo a aprimorar e aplicar novas competências na prática..</p>
+            </div>
+            <div class="foto-container">
+                <img src="{{ url_for('static', filename='images/grafico_pizza.png') }}" alt="Gráfico pizza" class="foto">
+            </div>
+        </section>
+        <br>
+        <br>
+        
+        <div class="header-divider"></div>
+        <br>
+        <section id="section1" class="intro">
+            
+            <h2>Empregos 360: O que os Dados Revelam - LinkedIn, 2024</h2>
+            <h3>
+                <p>O mercado de trabalho encontra-se em constante transformação, impulsionado por avanços tecnológicos, novas
+                    exigências e dinâmicas sociais. Este projeto foi concebido para investigar estas mudanças, utilizando uma 
+                    abordagem analítica com recurso ao Jupyter Notebook e à linguagem Python. Para isso, foram aplicados 
+                    frameworks robustos como pandas, seaborn e matplotlib, que possibilitaram a transformação de uma base de dados 
+                    extensa, publicada no Kaggle, em insights detalhados e visualizações informativas.</p>
+
+                <p>A análise centrou-se em aspectos como o impacto do trabalho remoto na redefinição da flexibilidade 
+                    organizacional e na forma como as empresas conciliam inovação e tradição. Foram também identificadas 
+                    tendências significativas, como a crescente importância das competências interpessoais, que estão a ganhar 
+                    destaque ao lado das competências técnicas, e o papel determinante das opções de trabalho remoto na 
+                    atratividade das ofertas de emprego.</p>
+
+                <p>Mais do que apresentar dados quantitativos, este projeto procura fornecer uma visão abrangente das 
+                    transformações no mercado de trabalho. As tendências identificadas evidenciam a forma como o futuro do 
+                    trabalho está a ser moldado, oferecendo pistas sobre os desafios e oportunidades que surgem neste novo cenário.</p>
+                    
+                <p>Este projeto não é apenas uma análise de dados; é uma janela para compreender como o futuro do trabalho está a 
+                    ser moldado e como podemos ser parte desta evolução. É uma oportunidade para refletir sobre como as
+                    mudanças no mercado de trabalho podem impactar não apenas o nosso futuro profissional, mas também a nossa
+                    forma de vida e a nossa relação com o trabalho.</p>
+                </h3>
+            <br>
+            
+                <button onclick="location.href='/emprego360'">Explorar análise</button>
+                <br>
+                
+            </div>
+        </section>
+        <br>
+        <br>
+        <div class="header-divider"></div>
+        <br>
+        <section id="section2" class="intro">
+            
+            <div class="intro-container">
+                <div class="foto-container">
+                    <img src="{{ url_for('static', filename='images/minha_foto.jpeg') }}" alt="Gráfico pizza" class="foto">
+                </div>
+                <div class="texto-container">
+                    <h2><p>Olá, sou Elisa Coutinho</p></h2>
+                    <p>Uma profissional com experiência em gestão de projetos e análise de negócios, 
+                        atualmente em transição para a área de Data Analytics. Ao longo da minha carreira, desenvolvi competências 
+                        em gestão estratégica e processos operacionais, e recentemente finalizei a minha formação em programação 
+                        informática.</p>
+                    <p>Especializei-me em SQL, modelagem de dados e análise de dados, obtendo a certificação Google Data Analytics.
+                        Acredito no poder dos dados para transformar negócios e estou pronta para aplicar meus conhecimentos em 
+                        Python, R e visualização de dados em novos projetos desafiantes.</p>
+                
+            </div>
+           
+
+        </section>
+        <button id="back-to-top">↑</button>
+    </main>
+    <footer>
+        <div class="header-divider"></div>
+        
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+    </footer>
+    <script>
+        // Scroll suave para menu, logo e links do header
+        document.querySelectorAll('.navigation a, .logo a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+            const offset = 50; // Ajuste da posição do scroll
+            const topPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({
+                top: topPosition,
+                behavior: 'smooth'
+            });
+            }
+        });
+        });
+
+        // Botão "Voltar ao Topo"
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // Exibe o botão após rolar 300px
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+        });
+
+        // Scroll suave ao clicar no botão
+        backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        });
+      </script>
+      
+</body>
+</html>

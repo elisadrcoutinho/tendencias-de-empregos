@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empregos 360: O que os Dados Revelam - LinkedIn Abril, 2024</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Logo" class="logo">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="{{ url_for('projetos') }}">Projetos</a></li>
+                    <li><a href="{{ url_for('sobre_mim') }}">Sobre Mim</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+      </header>
+    <div class="header-divider"></div>
+    <main>
+    
+    <!-- Seção de Introdução -->
+    <section class="intro">
+        <h2>Empregos 360: O que os Dados Revelam - LinkedIn, 2024</h2>
+        <h3>O mercado de trabalho está a passar por uma transformação significativa, com a crescente valorização do trabalho 
+            remoto e das competências interpessoais. Este projeto explora como essas mudanças estão a moldar as ofertas de 
+            emprego, destacando a necessidade de adaptação tanto para empresas como para candidatos. O objetivo é identificar 
+            padrões e tendências emergentes que revelam como o futuro do trabalho está a ser redefinido, proporcionando uma visão 
+            clara dos desafios e oportunidades no panorama profissional atual.</h3>
+    </section>
+  
+  <!-- Seção de Análises -->
+  <section class="buttons">
+
+    <div class="button-item">
+        <button onclick="location.href='/metadados'">Dados</button>
+        <p>O processamento</p>
+      </div>
+
+      <div class="button-item">
+        <button onclick="location.href='/formato-trabalho'">Formato de Trabalho</button>
+        <p>A Flexibilidade em Construção</p>
+      </div>
+      <div class="button-item">
+        <button onclick="location.href='/correlacao-visualizacao-aplicacao'">Views vs Aplies</button>
+        <p>As vagas são visualizadas?</p>
+     </div>
+      <div class="button-item">
+          <button onclick="location.href='/tipo-contrato'">Tipo de Contrato</button>
+          <p>Estabilidade ou Flexibilidade?</p>
+      </div>
+      <div class="button-item">
+          <button onclick="location.href='/localizacao'">Localização</button>
+          <p>Onde estão as Oportunidades?</p>
+      </div>
+  
+      <div class="button-item">
+          <button onclick="location.href='/nivel-experiencia'">Nível de Experiência</button>
+          <p>Quem as Empresas Buscam?</p>
+      </div>
+  
+      <div class="button-item">
+          <button onclick="location.href='/top-10-titulos'">Títulos de Vagas</button>
+          <p>O que as empresas procuram?</p>
+      </div>
+  
+      <div class="button-item">
+          <button onclick="location.href='/top-10-vagas'">Vagas Procuradas</button>
+          <p>O Mercado de Tecnologia em Alta</p>
+      </div>
+  
+      <div class="button-item">
+          <button onclick="location.href='/skills-habilidades'">Competências</button>
+          <p>O Que as Empresas Valorizam?</p>
+      </div>
+  
+  </section>
+  
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Desenvolvido por Elisa Coutinho, 2024</p>
+        <p>
+            <a href="https://www.linkedin.com/in/elisadrummondrc" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn" class="icon"> LinkedIn
+            </a>  |  
+            <a href="https://github.com/elisadrcoutinho" target="_blank" rel="noopener noreferrer" class="github-link">
+                <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub" class="icon"> GitHub
+            </a>
+        </p>
+        
+    </footer>
+    
+
+
+</body>
+</html>
